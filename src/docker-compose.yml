@@ -1,0 +1,15 @@
+webserver:
+    build: ./AppWebServer
+    links:
+        - info:info
+        - processor:processor
+    ports:
+        - "8000:8000"
+info:
+    build: ./AppInfo
+    ports:
+        - "8092"
+processor:
+    build: ./AppProcessor
+    ports:
+        - "8082"
